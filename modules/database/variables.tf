@@ -30,6 +30,10 @@ variable "apply_immediately" {
   type = bool
 }
 
-variable "db_subnet_group_name" {
+variable "subnet_group_name" {
   type = any
+}
+
+variable "region" {
+  type = string
 }
