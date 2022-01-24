@@ -149,3 +149,7 @@ variable "skip_final_snapshot" {
 variable "db_subnet_group_name" {
   type = any
 }
+
+variable "apply_immediately" {
+  type = bool
+}

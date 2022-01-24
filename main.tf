@@ -28,7 +28,7 @@ module "vpc" {
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "rds_subnet_group"
-  subnet_ids = [module.vpc.database_subnet_1.id, module.vpc.database_subnet_2.id]
+  subnet_ids = [module.vpc.database-subnet-1-id, module.vpc.database-subnet-2-id]
 
   tags = {
     Name = "My DB subnet group"
@@ -36,14 +36,15 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
 }
 
 module "database" {
-  source               = "./modules/database"
-  db_subnet_group_name = aws_db_subnet_group.rds_subnet_group
-  instance_class       = var.instance_class
-  engine               = var.engine
-  name                 = var.name
-  username             = var.username
-  password             = var.password
-  skip_final_snapshot  = var.skip_final_snapshot
-  apply_immediately    = var.apply_immediately
-  allocated_storage    = var.allocated_storage
+  region              = region
+  source              = "./modules/database"
+  subnet_group_name   = aws_db_subnet_group.rds_subnet_group
+  instance_class      = var.instance_class
+  engine              = var.engine
+  name                = var.name
+  username            = var.username
+  password            = var.password
+  skip_final_snapshot = var.skip_final_snapshot
+  apply_immediately   = var.apply_immediately
+  allocated_storage   = var.allocated_storage
 }
