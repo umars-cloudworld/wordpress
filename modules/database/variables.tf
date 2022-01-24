@@ -41,3 +41,11 @@ variable "subnet_group_resource" {
 variable "tags" {
   type = map(string)
 }
+
+variable "identifier" {
+  type = string
+}
+
+variable "is_encrypted" {
+  type = bool
+}

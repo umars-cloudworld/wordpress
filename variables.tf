@@ -150,3 +150,7 @@ variable "apply_immediately" {
 variable "tags" {
   type = map(string)
 }
+
+variable "identifier" {
+  type = string
+}

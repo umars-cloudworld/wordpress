@@ -48,4 +48,6 @@ module "database" {
   apply_immediately     = var.apply_immediately
   allocated_storage     = var.allocated_storage
   tags                  = var.tags
+  identifier            = var.identifier
+  is_encrypted          = var.instance_class == "db.t2.micro" ? false : true
 }
