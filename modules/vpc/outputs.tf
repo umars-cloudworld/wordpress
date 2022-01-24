@@ -31,3 +31,7 @@ output "web-sg-id" {
   description = "web-sg Security Group ID"
   value       = aws_security_group.web-sg.id
 }
+
+output "database-subnet-1-az" {
+  value = aws_subnet.database_subnet_1.availability_zone
+}
