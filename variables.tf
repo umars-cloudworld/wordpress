@@ -122,10 +122,6 @@ variable "engine" {
   type = string
 }
 
-variable "engine_version" {
-  type = string
-}
-
 variable "instance_class" {
   type = string
 }
@@ -146,10 +142,11 @@ variable "skip_final_snapshot" {
   type = bool
 }
 
-variable "db_subnet_group_name" {
-  type = any
-}
-
 variable "apply_immediately" {
   type = bool
+  default = false
+}
+
+variable "tags" {
+  type = map(string)
 }

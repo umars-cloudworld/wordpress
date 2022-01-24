@@ -30,10 +30,14 @@ variable "apply_immediately" {
   type = bool
 }
 
-variable "subnet_group_name" {
-  type = any
-}
-
 variable "region" {
   type = string
+}
+
+variable "subnet_group_resource" {
+  type = string
+}
+
+variable "tags" {
+  type = map(string)
 }
