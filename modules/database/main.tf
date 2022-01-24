@@ -12,4 +12,5 @@ resource "aws_db_instance" "this" {
   password             = var.password
   skip_final_snapshot  = var.skip_final_snapshot
   apply_immediately    = var.apply_immediately
+  tags = var.tags
 }

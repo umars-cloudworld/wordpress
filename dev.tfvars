@@ -29,3 +29,6 @@ password            = "wordpress_db"
 skip_final_snapshot = false
 apply_immediately   = true
 allocated_storage   = 20
+tags = {
+  Name = "wordpress_database"
+}

@@ -146,3 +146,7 @@ variable "apply_immediately" {
   type = bool
   default = false
 }
+
+variable "tags" {
+  type = map(string)
+}

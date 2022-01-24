@@ -37,3 +37,7 @@ variable "region" {
 variable "subnet_group_resource" {
   type = string
 }
+
+variable "tags" {
+  type = map(string)
+}
