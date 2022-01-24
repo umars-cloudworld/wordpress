@@ -59,11 +59,11 @@ variable "map_public_ip_on_launch" {
 }
 variable "database_subnet_cidr_1" {
   description = "mention the CIDR block for database subnet"
-  type = string
+  type        = string
 }
 variable "database_subnet_cidr_2" {
   description = "mention the CIDR block for database subnet"
-  type = string
+  type        = string
 }
 
 
@@ -94,19 +94,19 @@ variable "database_subnet_tag_2" {
 variable "rules" {
   default = [
     {
-      port=80
-      porto="tcp"
-      cidr_blocks=["0.0.0.0/0"]
+      port        = 80
+      porto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
     },
     {
-      port=443
-      porto="tcp"
-      cidr_blocks=["0.0.0.0/0"]
+      port        = 443
+      porto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
     },
     {
-      port=22
-      porto="tcp"
-      cidr_blocks=["0.0.0.0/0"]
+      port        = 22
+      porto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
     }
   ]
 }
