@@ -18,3 +18,14 @@ public_route_table_tag   = "MyWebRouteTable"
 destination_cidr_block   = "0.0.0.0/0"
 database_route_table_tag = "MyDatabaseRouteTable"
 SG_tag                   = "Security Group"
+
+
+# Database parameters
+instance_class      = "db.t2.micro"
+engine              = "mysql"
+name                = "wordpress_db"
+username            = "wordpress_db"
+password            = "wordpress_db"
+skip_final_snapshot = false
+apply_immedaitely   = true
+allocated_storage   = 20
