@@ -1,7 +1,7 @@
 region                   = "us-east-1"
 cidr                     = "10.0.0.0/16"
-enable_dns_hostnames     = null
-enable_dns_support       = null
+enable_dns_hostnames     = true
+enable_dns_support       = true
 enable_ipv6              = null
 vpc_name                 = "Web-VPC"
 igw_tag                  = "My-IGW"
