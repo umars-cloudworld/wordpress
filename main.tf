@@ -47,5 +47,5 @@ module "database" {
   skip_final_snapshot   = var.skip_final_snapshot
   apply_immediately     = var.apply_immediately
   allocated_storage     = var.allocated_storage
-  tags = var.tags
+  tags                  = var.tags
 }

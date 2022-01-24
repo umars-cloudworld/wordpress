@@ -143,7 +143,7 @@ variable "skip_final_snapshot" {
 }
 
 variable "apply_immediately" {
-  type = bool
+  type    = bool
   default = false
 }
 
