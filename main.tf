@@ -47,5 +47,7 @@ module "database" {
   skip_final_snapshot   = var.skip_final_snapshot
   apply_immediately     = var.apply_immediately
   allocated_storage     = var.allocated_storage
-  tags = var.tags
+  tags                  = var.tags
+  identifier            = var.identifier
+  is_encrypted          = var.instance_class == "db.t2.micro" ? false : true
 }

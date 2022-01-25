@@ -21,14 +21,15 @@ SG_tag                   = "Security Group"
 
 
 # Database parameters
+identifier          = "wordpress-database"
+skip_final_snapshot = false
 instance_class      = "db.t2.micro"
 engine              = "mysql"
 name                = "wordpress_db"
 username            = "wordpress_db"
 password            = "wordpress_db"
-skip_final_snapshot = false
 apply_immediately   = true
 allocated_storage   = 20
 tags = {
-  Name = "wordpress_database"
+  Name = "wordpress-database"
 }

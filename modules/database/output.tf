@@ -1,4 +1,4 @@
-output "db_enpoint" {
+output "db_endpoint" {
   value = aws_db_instance.this.endpoint
 }
 
@@ -12,4 +12,8 @@ output "db_username" {
 
 output "db_password" {
   value = aws_db_instance.this.password
+}
+
+output "db_port" {
+  value = aws_db_instance.this.port
 }
