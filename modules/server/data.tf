@@ -5,10 +5,6 @@ data "aws_subnet" "selected" {
   }
 }
 
-data "template_file" "user_date"{
-  template = "./user-data.sh"
-}
-
 data "aws_security_group" "selected" {
   filter {
     name   = "tag:Name"
