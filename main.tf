@@ -5,11 +5,11 @@ terraform {
       version = "~> 3.0"
     }
   }
-  backend "s3" {
-    bucket = "statefile-bucket-oiufosdjfadhfoiiyuyiu"
-    key    = "state/"
-    region = "us-east-1"
-  }
+#  backend "s3" {
+#    bucket = "statefile-bucket-oiufosdjfadhfoiiyuyiu"
+#    key    = "state/"
+#    region = "us-east-1"
+#  }
 }
 
 
@@ -66,8 +66,21 @@ module "database" {
   identifier            = var.identifier
   is_encrypted          = var.instance_class == "db.t2.micro" ? false : true
 }
+
 module "server" {
   source = "./modules/server"
-  ami    = var.ami
-  region = var.region
+
+  ami                   = data.aws_ami.amazon_linux2_ami.id
+  ec2_public_subnet_id  = module.vpc.public-subnet-1-id
+  ec2_security_group_id = module.vpc.web-sg-id
+  region                = var.region
+  user_data_template = templatefile("user_data.sh",
+  {
+    "db_root_password" = module.database.db_password
+    "db_username" = module.database.db_username
+    "db_password" = module.database.db_password
+    "db_name" = module.database.db_name
+    "db_endpoint" = module.database.db_endpoint
+  }
+  )
 }
