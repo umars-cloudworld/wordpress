@@ -165,4 +165,3 @@ variable "identifier" {
 variable "ami" {
   type = string
 }
-
