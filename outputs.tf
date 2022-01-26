@@ -14,10 +14,11 @@ output "db_username" {
   description = "Database Username"
   value       = module.database.db_username
 }
-//output "db_password" {
-//  description = "Database Password"
-//  value = module.database.db_password
-//}
+output "db_password" {
+  description = "Database Password"
+  value = module.database.db_password
+  sensitive = true
+}
 output "public_ip" {
   description = "Public IP:"
   value       = module.server.public_ip

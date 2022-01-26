@@ -8,7 +8,6 @@ resource "aws_instance" "web" {
   instance_type = "t2.micro"
   subnet_id = var.ec2_public_subnet_id
   user_data = var.user_data_template
-//  ecs_associate_public_ip_address
   associate_public_ip_address = true
   tags = {
     Name = "Wordpress-server"
