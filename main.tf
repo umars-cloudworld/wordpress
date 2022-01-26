@@ -5,11 +5,11 @@ terraform {
       version = "~> 3.0"
     }
   }
-  backend "s3" {
-    bucket = "statefile-bucket-oiufosdjfadhfoiiyuyiu"
-    key    = "state/"
-    region = "us-east-1"
-  }
+#  backend "s3" {
+#    bucket = "statefile-bucket-oiufosdjfadhfoiiyuyiu"
+#    key    = "state/"
+#    region = "us-east-1"
+#  }
 }
 
 
