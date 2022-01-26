@@ -1,7 +1,7 @@
 data "aws_subnet" "selected" {
   filter {
     name   = "tag:Name"
-    values = ["public_subnet_1a"]
+    values = ["public_subnet_1"]
   }
 }
 
