@@ -1,3 +1,9 @@
+variable "bucket_name" {
+  type = string
+}
+variable "file_path" {
+  type = string
+}
 variable "region" {
   type = string
 }
@@ -154,3 +160,9 @@ variable "tags" {
 variable "identifier" {
   type = string
 }
+
+#Server Variables declaration
+variable "ami" {
+  type = string
+}
+

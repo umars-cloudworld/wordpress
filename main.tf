@@ -1,3 +1,18 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+  backend "s3" {
+    bucket = "statefile-bucket-oiufosdjfadhfoiiyuyiu"
+    key    = "state/"
+    region = "us-east-1"
+  }
+}
+
+
 provider "aws" {
   region = var.region
 }
@@ -50,4 +65,9 @@ module "database" {
   tags                  = var.tags
   identifier            = var.identifier
   is_encrypted          = var.instance_class == "db.t2.micro" ? false : true
+}
+module "server" {
+  source = "./modules/server"
+  ami    = var.ami
+  region = var.region
 }

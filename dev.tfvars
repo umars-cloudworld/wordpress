@@ -1,3 +1,5 @@
+bucket_name              = "statefile-bucket-oiufosdjfadhfoiiyuyiu"
+file_path                = "/"
 region                   = "us-east-1"
 cidr                     = "10.0.0.0/16"
 enable_dns_hostnames     = true
@@ -33,3 +35,5 @@ allocated_storage   = 20
 tags = {
   Name = "wordpress-database"
 }
+#Server Parameters
+ami = "ami-08e4e35cccc6189f4"
